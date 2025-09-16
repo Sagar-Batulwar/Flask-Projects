@@ -1,0 +1,21 @@
+<head> <title>to do list</title> </head>
+<body> 
+    <h1>To Do List By Sagar</h1>
+
+<form action = '{{url_for('add')}}' method='POST'>
+    <input type = text name = 'todoitem' placeholder = 'add task in sagar to-do'>  </input> <br> <br>
+    <button type='submit'>add this task</button>
+</form>
+
+<ul>
+    {%for i in todo%}
+    <li>{{i}}
+        <a href = '{{url_for('delete', task_id = loop.index0)}}'>delete?</a>
+    </li>
+    
+    {%endfor%}
+    
+</ul>
+
+
+</body>
